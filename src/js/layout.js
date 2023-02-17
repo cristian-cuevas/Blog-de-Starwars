@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
 import { Home } from "./views/home";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
@@ -18,13 +17,12 @@ const Layout = () => {
 		<>
 			<BrowserRouter basename={basename}>
 				<Navbar />
-					<Routes>
-						<Route exact path="/" component={Home} />
-						<Route exact path="/Characters" component={Characters} />
-						<Route exact path="/Charactersdetails/:id" component={Charactersdetails} />
-						<Route exact path="/Planets" component={Planets} />
-						<Route exact path="/Planetsdetails/:id" component={Planetsdetails} />
-						
+					<Routes>						
+						<Route  element={<Home/>}path="/" />
+						<Route  element={<Characters/>}path="/Characters" />
+						<Route  element={<Charactersdetails/>}path="/Charactersdetails/:id" />
+						<Route  element={<Planets/>}path="/Planets" />
+						<Route  element={<Planetsdetails/>}path="/Planetsdetails/:id" />				
 					</Routes>
 					<Footer />
 			</BrowserRouter>
